@@ -22,7 +22,6 @@ if (!newLogin) {
          return res.status(200).json({ token });
     
         // return res.status(erro.status).json({ message: erro.message });
-    
 };
 
 module.exports = {
