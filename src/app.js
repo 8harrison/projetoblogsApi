@@ -8,6 +8,7 @@ app.use(express.json());
 
 // ...
 app.post('/login', user.postLogin);
+app.post('/user', user.postUser);
 // É importante exportar a constante `app`,
 // para que possa ser utilizada pelo arquivo `src/server.js`
 module.exports = app;
