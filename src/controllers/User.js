@@ -9,7 +9,7 @@ const jwtConfig = {
 
 const secret = process.env.JWT_SECRET || 'qualquercoisa';
 
-const postLogin = async (req, res) => {
+const postLogin = async (req, res) => { 
   const { email, password } = req.body;
   if (!email || !password) {
     return res
@@ -46,7 +46,20 @@ const postUser = async (req, res) => {
     res.status(erro.status).json({ message: erro.message });
   }
 };
+
+const getUser = async (req, res) => {
+    const getUsers = await userService.getUser();
+    const users = getUsers.map((user) => (
+        { id: user.id, 
+           displayName: user.displayName, 
+           email: user.email, 
+           image: user.image }
+   ));
+    // const token = jwt.sign({ users }, secret, jwtConfig);
+    return res.status(200).json(users);
+};
 module.exports = {
   postLogin,
   postUser,
+  getUser,
 };

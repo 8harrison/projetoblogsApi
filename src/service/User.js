@@ -31,7 +31,14 @@ const postUser = async ({ displayName, email, password, image }) => {
         return newUser;
 };
 
+const getUser = async () => {
+    const getUsers = await User.findAll();
+    
+    return getUsers;
+};
+
 module.exports = {
     postLogin,
     postUser,
+    getUser,
 };
