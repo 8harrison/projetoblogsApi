@@ -58,8 +58,21 @@ const getUser = async (req, res) => {
     // const token = jwt.sign({ users }, secret, jwtConfig);
     return res.status(200).json(users);
 };
+
+const getOneUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const getAUser = await userService.getOneUser(id);
+    
+      res.status(200).json(getAUser);
+  } catch (erro) {
+    res.status(erro.status).json({ message: erro.message });
+  }
+};
+
 module.exports = {
   postLogin,
   postUser,
   getUser,
+  getOneUser,
 };

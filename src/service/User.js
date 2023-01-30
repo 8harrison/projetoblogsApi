@@ -33,12 +33,21 @@ const postUser = async ({ displayName, email, password, image }) => {
 
 const getUser = async () => {
     const getUsers = await User.findAll();
-    
     return getUsers;
+};
+
+const getOneUser = async (id) => {
+    const getAUser = await User.findByPk(id, { attributes: { exclude: ['password'] } });
+    if (!getAUser) {
+        const erro = { status: 404, message: 'User does not exist' };
+        throw erro;
+    }
+    return getAUser;
 };
 
 module.exports = {
     postLogin,
     postUser,
     getUser,
+    getOneUser,
 };
