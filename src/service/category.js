@@ -6,6 +6,12 @@ const categoryPost = async (name) => {
         return newUser;
 };
 
+const categoryGet = async () => {
+    const categories = await Category.findAll();
+    return categories;
+};
+
 module.exports = {
     categoryPost,
+    categoryGet,
 };
