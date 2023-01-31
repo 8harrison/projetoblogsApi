@@ -6,6 +6,10 @@ const categoriesModel = (sequelize, DataTypes) => {
             autoIncrement: true,
         },
         name: DataTypes.STRING
+    }, {
+        underscored: true,
+        tableName: 'categories',
+        timestamps: false,
     })
     return category
 }
