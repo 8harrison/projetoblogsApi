@@ -2,18 +2,19 @@ const postCategoryModel = (sequelize, DataTypes) => {
   const post = sequelize.define(
     "PostCategory",
     {
-      postId:{
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-      } ,
-      categoryId:{
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-      } 
+      // postId:{
+      //   type: DataTypes.INTEGER,
+      //   primaryKey: true,
+      // } ,
+      // categoryId:{
+      //   type: DataTypes.INTEGER,
+      //   primaryKey: true,
+
+      // } 
     },
     {
       underscored: true,
-      tableName: "post_categories",
+      tableName: "posts_categories",
       timestamps: false,
     }
   );
