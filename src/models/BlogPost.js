@@ -9,7 +9,7 @@ const blogPostsModel = (sequelize, DataTypes) => {
         },
         title: DataTypes.STRING,
         content: DataTypes.STRING,
-        user_id: DataTypes.INTEGER,
+        userId: DataTypes.INTEGER,
         published: DataTypes.DATE,
         updated: DataTypes.DATE,
     },{
